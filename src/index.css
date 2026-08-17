@@ -1,0 +1,31 @@
+:root {
+  /* TODO: ajustar paleta para sua identidade visual pessoal */
+  --color-bg: #ffffff;
+  --color-surface: #f4f4f6;
+  --color-border: #e2e2e6;
+  --color-text: #1c1c1e;
+  --color-text-muted: #6b6b70;
+  --color-accent: #4f46e5;
+
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}

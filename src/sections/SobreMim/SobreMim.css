@@ -1,0 +1,14 @@
+.sobre-mim__resumo {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+.sobre-mim__bloco {
+  margin-top: 1.5rem;
+}
+
+.sobre-mim__bloco h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}

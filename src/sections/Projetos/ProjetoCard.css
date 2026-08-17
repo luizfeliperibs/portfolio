@@ -1,0 +1,55 @@
+.projeto-card {
+  display: flex;
+  gap: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.projeto-card__imagem-placeholder {
+  flex: 0 0 160px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+
+.projeto-card__conteudo {
+  flex: 1;
+  min-width: 200px;
+}
+
+.projeto-card__tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0;
+}
+
+.projeto-card__tecnologias li {
+  background: var(--color-surface);
+  border-radius: 4px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.8rem;
+}
+
+.projeto-card__link {
+  color: var(--color-accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.projeto-card__link:hover {
+  text-decoration: underline;
+}

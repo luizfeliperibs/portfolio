@@ -1,0 +1,33 @@
+.navbar__list {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: var(--color-accent);
+}
+
+.navbar__link--active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+@media (max-width: 600px) {
+  .navbar__list {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

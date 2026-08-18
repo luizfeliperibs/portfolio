@@ -25,12 +25,6 @@
   <img src="https://img.shields.io/badge/Licença-MIT-green?style=for-the-badge" alt="MIT License" />
 </p>
 
-<p>
-  <img src="https://img.shields.io/badge/status-em%20desenvolvimento-yellow?style=flat-square" alt="Status" />
-  <img src="https://img.shields.io/badge/PUC%20Minas-Projeto%20de%20Software-8B0000?style=flat-square" alt="PUC Minas" />
-  <img src="https://img.shields.io/badge/2º%20Semestre-2026-blue?style=flat-square" alt="Semestre" />
-</p>
-
 </div>
 
 ---

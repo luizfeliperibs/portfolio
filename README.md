@@ -31,7 +31,7 @@
 
 ## 🎯 Sobre o Projeto
 
-Este é meu **portfólio pessoal**, desenvolvido como projeto prático para a disciplina de **Projeto de Software** da PUC Minas (2º semestre/2026).
+Este é meu **portfólio pessoal**, desenvolvido como projeto prático para a disciplina de **Projeto de Software** da PUC Minas (4º semestre/2026).
 
 O site funciona como uma **Single-Page Application (SPA)** — uma única página com scroll suave e âncoras entre seções. O menu fixo no topo detecta automaticamente qual seção está visível e destaca o link correspondente, proporcionando uma experiência de navegação fluida e moderna.
 
@@ -174,7 +174,7 @@ Distribuído sob a licença **MIT**. Veja [`LICENSE`](LICENSE) para mais informa
 
 <div align="center">
 
-Feito por **[Luiz Felipe Ribeiro Souza](https://github.com/luizfeliperibs)** — PUC Minas, 2026
+Feito por **[Gabriel Santos Martins](https://github.com/Santos5-bh), [Henrique Pereira Resende](https://github.com/henriquepresende), [Luiz Felipe Ribeiro Souza](https://github.com/luizfeliperibs) e [Luiz Henrique Horta Oliveira](https://github.com/LuizHenriqueHO)** — PUC Minas, 2026
 
 <p>
   <a href="https://github.com/luizfeliperibs">

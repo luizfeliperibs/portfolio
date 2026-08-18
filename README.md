@@ -180,7 +180,7 @@ Distribuído sob a licença **MIT**. Veja [`LICENSE`](LICENSE) para mais informa
 
 <div align="center">
 
-Feito com ❤️ por **[Luiz Felipe Ribs](https://github.com/luizfeliperibs)** — PUC Minas, 2026
+Feito por **[Luiz Felipe Ribeiro Souza](https://github.com/luizfeliperibs)** — PUC Minas, 2026
 
 <p>
   <a href="https://github.com/luizfeliperibs">

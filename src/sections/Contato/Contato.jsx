@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { useLanguage } from '../../context/LanguageContext';
 import { contatoLinks } from '../../data/contato';
 import './Contato.css';
@@ -7,21 +8,53 @@ const ICONS = { email: '✉️', whatsapp: '💬', linkedin: '💼', github: '�
 
 const CAMPOS = { nome: '', email: '', mensagem: '' };
 
+const SERVICE_ID  = 'service_bly63be';
+const TEMPLATE_ID = 'template_qpahof9';
+const PUBLIC_KEY  = 'sZvC9VxZLYgwViv44';
+
 export function Contato() {
   const { language } = useLanguage();
-  const [form, setForm] = useState(CAMPOS);
-  const [sent, setSent] = useState(false);
+  const [form, setForm]       = useState(CAMPOS);
+  const [sent, setSent]       = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError]     = useState(false);
 
   function handleChange(e) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    console.log('Envio:', form);
-    setSent(true);
-    setForm(CAMPOS);
-    setTimeout(() => setSent(false), 4000);
+    setLoading(true);
+    setError(false);
+
+    const now = new Date().toLocaleString(language === 'pt' ? 'pt-BR' : 'en-US', {
+      dateStyle: 'short',
+      timeStyle: 'short',
+    });
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name:    form.nome,
+          email:   form.email,
+          message: form.mensagem,
+          time:    now,
+        },
+        PUBLIC_KEY,
+      );
+      setSent(true);
+      setForm(CAMPOS);
+      setTimeout(() => setSent(false), 5000);
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setError(true);
+      setTimeout(() => setError(false), 5000);
+    } finally {
+      setLoading(false);
+    }
   }
 
   const t = {
@@ -34,8 +67,9 @@ export function Contato() {
     emailPH:     language === 'pt' ? 'seu@email.com'     : 'your@email.com',
     msg:         language === 'pt' ? 'Mensagem'          : 'Message',
     msgPH:       language === 'pt' ? 'Olá, gostaria de...' : "Hi, I'd like to…",
-    send:        language === 'pt' ? 'Enviar'            : 'Send',
-    success:     language === 'pt' ? 'Mensagem enviada!' : 'Message sent!',
+    send:        loading ? (language === 'pt' ? 'Enviando…' : 'Sending…') : (language === 'pt' ? 'Enviar' : 'Send'),
+    success:     language === 'pt' ? '✓ Mensagem enviada! Veja seu Outlook.' : '✓ Message sent! Check your inbox.',
+    errMsg:      language === 'pt' ? '✗ Falha ao enviar. Tente novamente.' : '✗ Failed to send. Please try again.',
   };
 
   return (
@@ -79,8 +113,11 @@ export function Contato() {
                 value={form.mensagem} onChange={handleChange} required />
             </div>
 
-            <button type="submit" className="contato__submit">{t.send}</button>
-            {sent && <p className="contato__success">✓ {t.success}</p>}
+            <button type="submit" className="contato__submit" disabled={loading}>
+              {t.send}
+            </button>
+            {sent  && <p className="contato__success">{t.success}</p>}
+            {error && <p className="contato__error">{t.errMsg}</p>}
           </form>
         </div>
       </div>

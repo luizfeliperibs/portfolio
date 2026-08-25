@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Profile picture — keep out of version control
+public/avatar.png
+public/avatar.jpg
+public/avatar.jpeg
+public/avatar.webp

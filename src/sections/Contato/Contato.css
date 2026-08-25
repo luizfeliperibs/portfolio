@@ -105,9 +105,19 @@
   opacity: 0.85;
 }
 
+.contato__submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
 .contato__success {
   font-size: 0.82rem;
   color: #7ec89e;
+}
+
+.contato__error {
+  font-size: 0.82rem;
+  color: #e07070;
 }
 
 @media (max-width: 600px) {

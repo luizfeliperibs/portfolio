@@ -1,17 +1,19 @@
 import { useActiveSection } from '../../hooks/useActiveSection';
+import { useLanguage } from '../../context/LanguageContext';
 import './Navbar.css';
 
-const NAV_LINKS = [
-  { id: 'sobre', label: 'Sobre Mim' },
-  { id: 'projetos', label: 'Projetos' },
-  { id: 'experiencias', label: 'Experiências' },
-  { id: 'contato', label: 'Contato' },
-];
-
-const SECTION_IDS = NAV_LINKS.map((link) => link.id);
-
 export function Navbar() {
-  const activeId = useActiveSection(SECTION_IDS);
+  const { language } = useLanguage();
+
+  const NAV_LINKS = [
+    { id: 'inicio',       label: language === 'pt' ? 'Início'     : 'Home'       },
+    { id: 'sobre',        label: language === 'pt' ? 'Sobre'      : 'About'      },
+    { id: 'projetos',     label: language === 'pt' ? 'Projetos'   : 'Projects'   },
+    { id: 'experiencias', label: language === 'pt' ? 'Experiência': 'Experience' },
+    { id: 'contato',      label: language === 'pt' ? 'Contato'    : 'Contact'    },
+  ];
+
+  const activeId = useActiveSection(NAV_LINKS.map((l) => l.id));
 
   function handleClick(event, id) {
     event.preventDefault();
@@ -25,12 +27,8 @@ export function Navbar() {
           <li key={link.id}>
             <a
               href={`#${link.id}`}
-              onClick={(event) => handleClick(event, link.id)}
-              className={
-                activeId === link.id
-                  ? 'navbar__link navbar__link--active'
-                  : 'navbar__link'
-              }
+              onClick={(e) => handleClick(e, link.id)}
+              className={activeId === link.id ? 'navbar__link navbar__link--active' : 'navbar__link'}
             >
               {link.label}
             </a>

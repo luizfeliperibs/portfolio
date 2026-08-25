@@ -1,14 +1,85 @@
-.sobre-mim__resumo {
-  font-size: 1.05rem;
-  color: var(--color-text-muted);
-  max-width: 60ch;
+/* ========================
+   SOBRE MIM
+   ======================== */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
-.sobre-mim__bloco {
-  margin-top: 1.5rem;
+/* ---- Card ---- */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  transition: border-color var(--transition);
 }
 
-.sobre-mim__bloco h2 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+.card:hover {
+  border-color: var(--border-hover);
+}
+
+.card--full {
+  grid-column: 1 / -1;
+}
+
+.card__label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.card__text {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.card__strong {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.card__sub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ---- Badges ---- */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.badge {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: var(--bg-card2);
+  color: var(--text-soft);
+}
+
+.badge--blue {
+  border-color: rgba(91,140,255,0.3);
+  color: #7da9ff;
+  background: rgba(91,140,255,0.08);
+}
+
+.badge--green {
+  border-color: rgba(74,222,128,0.25);
+  color: #7ec89e;
+  background: rgba(74,222,128,0.07);
+}
+
+@media (max-width: 600px) {
+  .sobre-grid { grid-template-columns: 1fr; }
+  .card--full { grid-column: auto; }
 }

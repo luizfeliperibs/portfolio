@@ -1,5 +1,6 @@
 import { Header } from './components/Layout/Header';
 import { Footer } from './components/Layout/Footer';
+import { Hero } from './sections/Hero/Hero';
 import { SobreMim } from './sections/SobreMim/SobreMim';
 import { Projetos } from './sections/Projetos/Projetos';
 import { Experiencias } from './sections/Experiencias/Experiencias';
@@ -11,7 +12,11 @@ export function App() {
     <div className="app">
       <Header />
 
-      <main className="app__content">
+      <main>
+        {/* Hero é full-width, usa .container interno */}
+        <Hero />
+
+        {/* Demais seções também usam .container internamente */}
         <SobreMim />
         <Projetos />
         <Experiencias />

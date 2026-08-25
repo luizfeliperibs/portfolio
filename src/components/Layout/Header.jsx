@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Navbar } from './Navbar';
 import { useLanguage } from '../../context/LanguageContext';
 import './Header.css';
@@ -8,8 +9,7 @@ export function Header() {
   return (
     <header className="header">
       <div className="header__brand">
-        {/* TODO: substituir pelo seu nome/marca pessoal */}
-        <span className="header__name">[SEU NOME]</span>
+        luizfelipe<span>.dev</span>
       </div>
 
       <Navbar />
@@ -20,7 +20,7 @@ export function Header() {
         onClick={toggleLanguage}
         aria-label="Alternar idioma"
       >
-        {language === 'pt' ? '🇧🇷 PT' : '🇺🇸 EN'}
+        {language === 'pt' ? 'EN' : 'PT'}
       </button>
     </header>
   );
